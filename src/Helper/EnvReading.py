@@ -25,10 +25,6 @@ class Settings(BaseSettings):
     MODEL_IOU:float
     MODEL_CONF:float
 
-    HandFromROIThreshold:int
-    HandToScooperThreshold:int
-    ScooperToROIThreshold:int
-    TimeToRecordViolation:int
 
 
     class Config:
