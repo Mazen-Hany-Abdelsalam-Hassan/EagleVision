@@ -1,0 +1,28 @@
+services:
+  mongodb:
+    image: mongo:7-jammy
+    container_name: mongodb
+    ports:
+      - "27007:27017"
+    volumes:
+      - mongodata:/data/db
+    networks:
+      - backend
+    restart: always
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitMQ
+    hostname: Mazen
+    ports:
+      - "15672:15672"  # Management UI
+      - "5672:5672"    # AMQP
+    networks:
+      - backend
+    restart: always
+
+networks:
+  backend:
+
+volumes:
+  mongodata:
