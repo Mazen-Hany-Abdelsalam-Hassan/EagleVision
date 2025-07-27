@@ -90,7 +90,9 @@ class FrameReader:
                         continue
                     p1 = time.time()
                     image = self.jpeg_encoder.decode(encoded_frame)
-                    self.detection_service.main(image)
+                    violation = self.detection_service.main(image)
+                    if violation:
+                        self.num_violation+=1
                     encoded_frame = self.jpeg_encoder.encode(image)
                     length = struct.pack(">L", len(encoded_frame))
                     msg = length + encoded_frame
@@ -105,8 +107,6 @@ class FrameReader:
         finally:
             for (client ,address) in self.clients:
                 client.close()
-
-            self.num_violation = 10
             value_dict = {"status": "finished",
                           "num_violation":self.num_violation}
             new_values = {"$set": value_dict}

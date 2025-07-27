@@ -1,8 +1,8 @@
 from celery import Celery
 from Helper import Settings , get_setting
 from Controlers import FrameReader
-from motor.motor_asyncio import  AsyncIOMotorClient
 from pymongo import MongoClient
+from Helper import get_setting
 
 
 
@@ -18,7 +18,8 @@ def frame_reader(frame_queue,regoin_of_interst):
     """
     Celery task to convert video to frames and send to queue
     """
-    client = MongoClient('mongodb://127.0.0.1:27007/')
+    env = get_setting()
+    client = MongoClient(env.CLIENT)
 
     # Access your database
     db = client["VideoStream"]
@@ -29,5 +30,4 @@ def frame_reader(frame_queue,regoin_of_interst):
     video_queue =  FrameReader(frame_queue=frame_queue,
                                collection = collection,
                                regoin_of_interst = regoin_of_interst)
-
     video_queue.main()

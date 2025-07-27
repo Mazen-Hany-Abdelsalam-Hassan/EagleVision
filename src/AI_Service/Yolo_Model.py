@@ -1,7 +1,7 @@
 import os
 from ultralytics import YOLO
 import numpy as np
-import ast
+import  torch
 from Helper import Settings , get_setting
 import cv2
 class Yolo_Model:
@@ -13,7 +13,8 @@ class Yolo_Model:
             if filename.endswith(".pt"):
                 self.model = os.path.join(model_dir, filename)
                 break
-        self.model = YOLO(self.model)
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.model = YOLO(self.model).to(device=device)
         self.ClassMapping =  {0: "hand", 1: "person", 2: "pizza", 3: "scooper"}
         self.color_config =   {
     "scooper": (255, 255, 255),

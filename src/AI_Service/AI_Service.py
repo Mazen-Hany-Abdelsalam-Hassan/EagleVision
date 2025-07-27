@@ -19,4 +19,4 @@ class AI_Service:
         scoopers = result["scooper"]
         violation = self.ROI.main(hands = hands, frame = frame, scooper = scoopers)
         cv2.putText(frame, f"Violation = {self.ROI.violation}", (100, 100), self.font, 3, color=(255, 0, 255), thickness=3)
-        return  violation,frame
+        return  violation
