@@ -8,9 +8,9 @@ Detects whether workers use a scooper when handling ingredients, logs violations
 ## 📌 Project Overview
 
 This system:
-- Captures frames from live video streams.
-- Detects when ingredients are handled **without** a scooper inside defined Regions of Interest (ROIs).
-- Logs violations and streams annotated video through a FastAPI web interface.
+- Captures frames from live video streams
+- Detects when ingredients are handled **without** a scooper inside defined Regions of Interest (ROIs)
+- Logs violations and streams annotated video through a FastAPI web interface
 
 Built with:
 - Python 3.12.3
@@ -42,8 +42,6 @@ EagleVision/
 └── README.md
 ```
 
----
-
 ## 🚀 Quick Setup & Installation
 
 ✅ Make sure you have Conda, Python 3.12.3, Docker, and Docker Compose installed.
@@ -51,7 +49,7 @@ EagleVision/
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/your-username/EagleVision.git
+git clone https://github.com/Mazen-Hany-Abdelsalam-Hassan/EagleVision.git
 cd EagleVision
 ```
 
@@ -69,6 +67,16 @@ Install PyTorch (CPU version):
 ```bash
 pip install torch==2.7.1 torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 ```
+ ⚡ GPU 
+
+If running on GPU:
+
+1. Install CUDA 12.8
+2. Install PyTorch GPU version:
+
+```bash
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+```
 
 Install other project requirements:
 
@@ -76,6 +84,12 @@ Install other project requirements:
 cd src
 pip install -r requirements.txt
 ```
+
+Install turbojpeg via conda-forge:
+```bash
+conda install -c conda-forge libjpeg-turbo
+```
+
 
 ### 4️⃣ Start RabbitMQ with Docker Compose
 
@@ -125,3 +139,26 @@ Open in browser: http://127.0.0.1:8000
 ✅ Real-time scooper violation detection  
 ✅ Live streaming of annotated video  
 ✅ Microservices & distributed task queue  
+✅ Scalable & modular architecture  
+✅ Docker-ready deployment  
+
+
+## 🧩 Tech Stack
+
+- Python 3.12.3
+- FastAPI
+- Celery
+- RabbitMQ
+- PyTorch & YOLO
+- OpenCV
+- Docker & Docker Compose
+
+---
+
+
+## 📬 Contact
+
+**Mazen Hany**  
+📧 mazenhany1912003@gmail.com
+---
+
