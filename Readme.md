@@ -120,6 +120,8 @@ Open in browser: http://127.0.0.1:8000
 
 ---
 
+https://github.com/user-attachments/assets/c0832353-8f98-4718-980f-260970d84d94
+
 ## 🛠 Features
 
 ✅ Real-time scooper violation detection  
