@@ -60,7 +60,15 @@ conda create -n eaglevision python=3.12.3
 conda activate eaglevision
 ```
 
+
+
 ### 3️⃣ Install Python dependencies
+
+
+Install turbojpeg via conda-forge:
+```bash
+conda install -c conda-forge libjpeg-turbo
+```
 
 Install PyTorch (CPU version):
 
@@ -85,13 +93,8 @@ cd src
 pip install -r requirements.txt
 ```
 
-Install turbojpeg via conda-forge:
-```bash
-conda install -c conda-forge libjpeg-turbo
-```
 
-
-### 4️⃣ Start RabbitMQ with Docker Compose
+### 4️⃣ Start RabbitMQ  and MongoDB with Docker Compose
 
 ```bash
 cd Docker
@@ -99,6 +102,9 @@ docker compose up -d
 ```
 
 RabbitMQ management console: http://localhost:15672
+Mongo DB console: http://localhost:27007  
+
+Note this port can be changed from the docker file
 
 ---
 
@@ -134,14 +140,18 @@ Open in browser: http://127.0.0.1:8000
 
 ---
 
+## DEMOS 😏😏
+### Demo1
 https://github.com/user-attachments/assets/c0832353-8f98-4718-980f-260970d84d94
+
+### Demo2 
+https://github.com/user-attachments/assets/a6227e9d-1872-471e-a322-4c02cbaa54bb
 
 ## 🛠 Features
 
 ✅ Real-time scooper violation detection  
 ✅ Live streaming of annotated video  
 ✅ Microservices & distributed task queue  
-✅ Scalable & modular architecture  
 ✅ Docker-ready deployment  
 
 
